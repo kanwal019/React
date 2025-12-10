@@ -1,0 +1,23 @@
+{
+  "name": "react-next-learning",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Starter workspace for learning React and Next.js",
+  "author": "Kanwal preet Singh",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest",
+    "web-vitals": "latest"
+  },
+  "engines": {
+    "node": ">=24.11.1"
+  }
+}

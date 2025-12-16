@@ -1,24 +1,28 @@
 {
   "name": "react-next-learning",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Starter workspace for learning React and Next.js",
-  "author": "Kanwal preet Singh",
-  "license": "MIT",
+  "dependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "react-scripts": "latest",
-    "web-vitals": "latest"
-  },
-  "engines": {
-    "node": ">=24.11.1"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

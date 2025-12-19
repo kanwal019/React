@@ -21,3 +21,5 @@ console.log(getYear(publicationDate));
 // Using template literals, ternary operator and arrow functions to create a summary of the book
 const summary = `${title} by ${author} is a ${pages}-page book published in ${getYear(publicationDate)}. It belongs to the genres: ${genres.join(", ")}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
 console.log(summary);
+
+module.exports = { getYear };

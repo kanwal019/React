@@ -1,4 +1,4 @@
-import { getBook } from "./books.js";
+import { getBook } from "./Books.js";
 
 const getTotalReviewCount = (book) => {
   // Using optional chaining and nullish coalescing to safely access nested properties
@@ -10,3 +10,5 @@ const getTotalReviewCount = (book) => {
 console.log(getTotalReviewCount(getBook(1)));
 console.log(getTotalReviewCount(getBook(2)));
 console.log(getTotalReviewCount(getBook(3)));
+
+module.exports = { getTotalReviewCount };

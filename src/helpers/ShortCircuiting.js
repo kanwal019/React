@@ -4,7 +4,7 @@ import {
   hasMovieAdaptation,
 } from "./Destructuring.js";
 
-import { getBook } from "./books.js";
+import { getBook } from "./Books.js";
 
 // Using short-circuiting to log messages based on conditions
 console.log(true && "This will be logged");

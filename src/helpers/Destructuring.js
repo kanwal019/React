@@ -1,4 +1,4 @@
-import { getBook } from "./books.js";
+import { getBook } from "./Books.js";
 
 // Destructuring the books data
 const book = getBook(1);

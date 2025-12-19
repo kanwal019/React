@@ -25,6 +25,12 @@ console.log("Science Fiction books:", sciFiBooks);
 
 // Using filter to get books in the 'science fiction' genre with more than 500 pages
 const longSciFiBooks = books
-.filter((book) => book.genres.includes("science fiction"))
-.filter((book) => book.pages > 500);
+  .filter((book) => book.genres.includes("science fiction"))
+  .filter((book) => book.pages > 500);
 console.log("Science Fiction books with more than 500 pages:", longSciFiBooks);
+
+// Using filter and map to get titles of books in the 'adventure' genre
+const adventureBooks = books
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book) => book.title);
+console.log("Adventure books:", adventureBooks);

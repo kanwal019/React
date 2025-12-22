@@ -59,7 +59,7 @@ function App() {
 
 function Header() {
   // const style = { color: "#07b", fontSize: "48px", textTransform: "uppercase" };
-  const style = {}; // Commnent this line to remove the inline styles
+  const style = {}; // Commented this line to remove the inline styles
   return (
     <header className="header">
       <h1 style={style}>React Pizza Company!</h1>

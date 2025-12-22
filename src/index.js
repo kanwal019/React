@@ -71,16 +71,11 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <div>
+      <ul className="pizzas">
         {pizzaData.map((pizza) => (
-          <Pizza
-            name={pizza.name}
-            ingredients={pizza.ingredients}
-            photoName={pizza.photoName}
-            price={pizza.price}
-          />
+          <Pizza pizzaObj={pizza} key={pizza.name} />
         ))}
-      </div>
+      </ul>
     </main>
   );
 }
@@ -108,14 +103,14 @@ function Footer() {
 function Pizza(props) {
   console.debug(props);
   return (
-    <div className="pizza">
-      <img src={props.photoName} alt={props.name} />
+    <li className="pizza">
+      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
       <div>
-        <h3>{props.name} is great!</h3>
-        <p>{props.ingredients}</p>
-        <span>{props.price + 5} €</span>
+        <h3>{props.pizzaObj.name} is great!</h3>
+        <p>{props.pizzaObj.ingredients}</p>
+        <span>{props.pizzaObj.price + 2} €</span>
       </div>
-    </div>
+    </li>
   );
 }
 

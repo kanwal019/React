@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 
 const pizzaData = [
   {
@@ -48,7 +49,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -57,19 +58,24 @@ function App() {
 }
 
 function Header() {
-  const style = { color: "#07f", fontSize: "48px", textTransform: "uppercase" };
-  return <h1 style={style}>React Pizza Company!</h1>;
+  // const style = { color: "#07b", fontSize: "48px", textTransform: "uppercase" };
+  const style = {}; // Commnent this line to remove the inline styles
+  return (
+    <header className="header">
+      <h1 style={style}>React Pizza Company!</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 }
 
@@ -78,17 +84,17 @@ function Footer() {
   const openHour = 12;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
+  let message = "";
 
   if (!isOpen) {
-    alert(`We're closed now. Please visit us between ${openHour}:00 and ${closeHour}:00.`);
-  }else{
-    alert("We're currently open. Come visit us or order online.");
+    message = `We're closed now. Please visit us between ${openHour}:00 and ${closeHour}:00.`;
+  } else {
+    message = "We're currently open. Come visit us or order online.";
   }
 
   return (
-    <footer>
-      {new Date().toLocaleTimeString()} - We're currently open. Come visit us or
-      order online.
+    <footer className="footer">
+      {new Date().toLocaleTimeString()} - {message}
     </footer>
   );
 }
@@ -97,7 +103,7 @@ function Pizza() {
   return (
     <div>
       <img src="pizzas/prosciutto.jpg" alt="Pizza Prosciutto" />
-      <h2>Pizza Prosciutto is great!</h2>
+      <h3>Pizza Prosciutto is great!</h3>
       <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
     </div>
   );

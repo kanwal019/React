@@ -105,6 +105,11 @@ function Footer() {
 
 function Pizza(props) {
   console.debug(props);
+
+  if(props.pizzaObj.soldOut){
+    return null;
+  }
+
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />

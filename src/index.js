@@ -57,7 +57,8 @@ function App() {
 }
 
 function Header() {
-  return <h1 style={{ color: "#07f", fontSize: "48px", textTransform: "uppercase" }}>React Pizza Company!</h1>;
+  const style = { color: "#07f", fontSize: "48px", textTransform: "uppercase" };
+  return <h1 style={style}>React Pizza Company!</h1>;
 }
 
 function Menu() {

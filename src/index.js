@@ -79,7 +79,9 @@ function Menu() {
             <Pizza pizzaObj={pizza} key={pizza.name} />
           ))}
         </ul>
-      ) : <p>We're still working on our menu. Please come back later :)</p>}
+      ) : (
+        <p>We're still working on our menu. Please come back later :)</p>
+      )}
     </main>
   );
 }
@@ -91,22 +93,30 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   return (
     <footer className="footer">
-      {isOpen ? (
-        <div className="order">
-          <p>We're open until {closeHour}:00. Come visit us or order online.</p>
-          <button className="btn">Order</button>
-        </div>
-      ) : (
-        <p>We're closed now. Please visit us between {openHour}:00 and {closeHour}:00.</p>
+      {isOpen ? <Order closeHour={closeHour} /> : (
+        <p>
+          We're closed now. Please visit us between {openHour}:00 and{" "}
+          {closeHour}:00.
+        </p>
       )}
     </footer>
+  );
+}
+
+function Order(props) {
+    console.debug(props);
+  return (
+    <div className="order">
+      <p>We're open until {props.closeHour}:00. Come visit us or order online.</p>
+      <button className="btn">Order</button>
+    </div>
   );
 }
 
 function Pizza(props) {
   console.debug(props);
 
-  if(props.pizzaObj.soldOut){
+  if (props.pizzaObj.soldOut) {
     return null;
   }
 

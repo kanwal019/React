@@ -126,18 +126,13 @@ function Order({ closeHour, openHour }) {
 
 function Pizza({ pizzaObj }) {
   console.debug(pizzaObj);
-
-  if (pizzaObj.soldOut) {
-    return null;
-  }
-
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name} is great!</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price + 2} €</span>
+        <span>{pizzaObj.soldOut ? "Sold Out" : pizzaObj.price + 2} €</span>
       </div>
     </li>
   );

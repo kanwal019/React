@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const messages = [
   "Hello React!",
   "Learn React ⚛️",
@@ -6,14 +8,14 @@ const messages = [
 ];
 
 export default function App() {
-  const step = 1;
+  const [step, setStep] = useState(1);
 
   function handlePrevious() {
-    alert("Previous button clicked");
+    setStep(step - 1);
   }
 
   function handleNext() {
-    alert("Next button clicked");
+    setStep(step + 1);
   }
 
   return (

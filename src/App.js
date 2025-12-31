@@ -9,6 +9,7 @@ const messages = [
 
 export default function App() {
   const [step, setStep] = useState(1);
+  const [test] = useState({ name: "Test" });
 
   function handlePrevious() {
     if (step > 1) setStep(step - 1);
@@ -16,6 +17,7 @@ export default function App() {
 
   function handleNext() {
     if (step < messages.length) setStep(step + 1);
+    test.name = "Changed"; // This is a bad example of mutating state directly
   }
 
   return (
@@ -27,7 +29,7 @@ export default function App() {
         <div className={step >= 4 ? "active" : ""}>4</div>
       </div>
       <p className="message">
-        Step {step}: {messages[step - 1]}
+        Step {step}: {messages[step - 1]} {test.name}
       </p>
       <div className="buttons">
         <button

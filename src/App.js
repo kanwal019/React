@@ -17,7 +17,10 @@ export default function App() {
   }
 
   function handleNext() {
-    if (step < messages.length) setStep(step + 1);
+    if (step < messages.length) {
+      setStep(step + 1);
+      setStep(step + 1); // This will only increment by 1 due to how state updates are batched
+    }
     // test.name = "Changed"; // This is a bad example of mutating state directly
   }
 

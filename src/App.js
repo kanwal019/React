@@ -13,20 +13,21 @@ export default function App() {
   // const [test] = useState({ name: "Test" });
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
   }
 
   function handleNext() {
     if (step < messages.length) {
-      setStep(step + 1);
-      setStep(step + 1); // This will only increment by 1 due to how state updates are batched
+      setStep((s) => s + 1);
+      // setStep(step + 1); // This will only increment by 1 due to how state updates are batched
+      // setStep((s) => s + 1); // This will only increment by 2 because React batches state updates
     }
     // test.name = "Changed"; // This is a bad example of mutating state directly
   }
 
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (

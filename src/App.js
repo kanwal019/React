@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function App() {
   return (
     <div className="App">
@@ -41,11 +43,12 @@ const questions = [
 ];
 
 function FlashCards() {
+  const [selected, setSelected] = React.useState(null);
   return (
     <div className="flashcards">
       {questions.map((q) => (
-        <div key={q.id}>
-          <p>{q.question}</p>
+        <div key={q.id} className={q.id === selected ? "selected" : ""}>
+          <p>{q.id === selected ? q.answer : q.question}</p>
         </div>
       ))}
     </div>

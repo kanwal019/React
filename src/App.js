@@ -7,15 +7,20 @@ export default function App() {
 function Counter() {
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(0);
-  const date = new Date("January 22, 2026");
+  const date = new Date("January 29, 2026");
   date.setDate(date.getDate() + count);
 
   return (
     <div style={{ fontFamily: "sans-serif", fontSize: "24px", textAlign: "center", marginTop: "50px" }}>
       <div style={{ marginTop: "10px" }}>
-        <button onClick={() => setStep((s) => s - 1)}>-</button>
+        <input
+          type="range"
+          min="1"
+          max="10"
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        />
         <span> Step: {step} </span>
-        <button onClick={() => setStep((s) => s + 1)}>+</button>
       </div>
       <div style={{ marginTop: "10px" }}>
         <button onClick={() => setCount((c) => c - step)}>-</button>

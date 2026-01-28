@@ -1,56 +1,97 @@
-import { useState } from "react";
+import React from 'react';
+
+const initialItems = [
+  { id: 1, description: "Passports", quantity: 2, packed: false },
+  { id: 2, description: "Socks", quantity: 12, packed: true },
+  { id: 3, description: "Charger", quantity: 1, packed: false },
+];
 
 export default function App() {
-  return (<Counter />);
+  return (
+    <div className="app">
+      <Logo />
+      <Form />
+      <PackingList />
+      <Stats />
+    </div>
+  );
 }
 
-function Counter() {
-  const [step, setStep] = useState(1);
-  const [count, setCount] = useState(0);
-  const date = new Date("January 29, 2026");
-  date.setDate(date.getDate() + count);
+function Logo() {
+  return <h1>🏝️ Far Away 🧳</h1>
+}
 
-  function handleReset() {
-    setCount(0);
-    setStep(1);
+function Form() {
+  const [description, setDescription] = React.useState("");
+  const [quantity, setQuantity] = React.useState(1);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!description) return;
+    const newItem = { description, quantity, packed: false, id: Date.now() };
+
+    console.log(newItem);
+
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
-    <div style={{ fontFamily: "sans-serif", fontSize: "24px", textAlign: "center", marginTop: "50px" }}>
-      <div style={{ marginTop: "10px" }}>
-        <input
-          type="range"
-          min="1"
-          max="10"
-          value={step}
-          onChange={(e) => setStep(Number(e.target.value))}
-        />
-        <span> Step: {step} </span>
-      </div>
-      <div style={{ marginTop: "10px" }}>
-        <button onClick={() => setCount((c) => c - step)}>-</button>
-        <input
-          type="text"
-          value={count}
-          onChange={(e) => setCount(Number(e.target.value))}
-        />
-        <button onClick={() => setCount((c) => c + step)}>+</button>
-      </div>
-      <div style={{ marginTop: "10px" }}>
-        <span>
-          {count === 0
-            ? "Today is "
-            : count > 0
-              ? `${count} days from today is `
-              : `${Math.abs(count)} days ago was `}
-        </span>
-        <span>{date.toDateString()}</span>
-      </div>
-      {count !== 0 || step !== 1 ? (
-        <div>
-          <button onClick={handleReset}>Reset</button>
-        </div>
-      ) : null}
+    <form className="add-form" onSubmit={handleSubmit}>
+      <h3>What do you need for your 😍 trip?</h3>
+      <select
+        value={quantity}
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      >
+        {
+          Array
+            .from({ length: 20 }, (_, i) => i + 1)
+            .map(num => (
+              <option value={num} key={num}>{num}</option>
+            ))
+        }
+      </select>
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <button>Add</button>
+    </form>
+  );
+}
+
+function PackingList() {
+  return (
+    <div className="list">
+      <ul>
+        {
+          initialItems.map(item => (
+            <Item item={item} key={item.id} />
+          ))
+        }
+      </ul>
     </div>
+  );
+}
+
+function Item({ item }) {
+  return (
+    <li>
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.quantity} {item.description}
+      </span>
+      <button>❌</button>
+    </li>
+  );
+}
+
+function Stats() {
+  return (
+    <footer className="stats">
+      <em>💼You have 0 items on your list, you have already packed 0 (0%)</em>
+    </footer>
   );
 }

@@ -47,7 +47,11 @@ function FlashCards() {
   return (
     <div className="flashcards">
       {questions.map((q) => (
-        <div key={q.id} className={q.id === selected ? "selected" : ""}>
+        <div
+          key={q.id}
+          onClick={() => setSelected(q.id)}
+          className={q.id === selected ? "selected" : ""}
+        >
           <p>{q.id === selected ? q.answer : q.question}</p>
         </div>
       ))}

@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function App() {
   return (
     <div className="App">
@@ -43,5 +41,13 @@ const questions = [
 ];
 
 function FlashCards() {
-  return <div>TODO</div>;
+  return (
+    <div className="flashcards">
+      {questions.map((q) => (
+        <div key={q.id}>
+          <p>{q.question}</p>
+        </div>
+      ))}
+    </div>
+  );
 }

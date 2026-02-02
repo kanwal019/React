@@ -8,16 +8,13 @@ const initialItems = [
 
 export default function App() {
   const [items, setItems] = React.useState(initialItems);
-  const [numItems, setNumItems] = React.useState(0);
 
   function addItem(item) {
     setItems((items) => [...items, item]);
-    setNumItems((num) => num + 1);
   }
 
   function deleteItem(id) {
     setItems((items) => items.filter((item) => item.id !== id));
-    setNumItems((num) => num - 1);
   }
 
   function toggleItem(id) {
@@ -37,7 +34,7 @@ export default function App() {
         onDeleteItem={deleteItem}
         onToggleItem={toggleItem}
       />
-      <Stats numItems={numItems} />
+      <Stats items={items} />
     </div>
   );
 }
@@ -127,7 +124,8 @@ function Item({ item, onDeleteItem: deleteItem, onToggleItem: toggleItem }) {
   );
 }
 
-function Stats({ numItems }) {
+function Stats({ items }) {
+    const numItems = items.length;
   return (
     <footer className="stats">
       <em>💼You have {numItems} items on your list, you have already packed 0 (0%)</em>

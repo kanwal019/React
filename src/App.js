@@ -127,6 +127,14 @@ function Item({ item, onDeleteItem: deleteItem, onToggleItem: toggleItem }) {
 
 function Stats({ items }) {
   const numItems = items.length;
+  if (!numItems) {
+    return (
+      <footer className="stats">
+        <em>🧳 Your packing list is empty. Start adding items! 📝</em>
+      </footer>
+    );
+  }
+
   const numPacked = items.filter(item => item.packed).length;
   const percentage = numItems === 0 ? 0 : Math.round((numPacked / numItems) * 100);
   return (

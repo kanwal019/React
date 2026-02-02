@@ -131,7 +131,13 @@ function Stats({ items }) {
   const percentage = numItems === 0 ? 0 : Math.round((numPacked / numItems) * 100);
   return (
     <footer className="stats">
-      <em>💼You have {numItems} items on your list, you have already packed {numPacked} ({percentage}%)</em>
+      <em>
+        {
+          percentage === 100 ?
+            "🎉 You are all packed! Ready to go ✈️" :
+            `💼You have ${numItems} items on your list, you have already packed ${numPacked} (${percentage}%)`
+        }
+      </em>
     </footer>
   );
 }

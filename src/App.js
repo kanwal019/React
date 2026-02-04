@@ -25,6 +25,13 @@ export default function App() {
     );
   }
 
+  function clearList() {
+    const confirmed = window.confirm(
+      "Are you sure you want to clear the entire list of items?"
+    );
+    if (confirmed) setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -33,6 +40,7 @@ export default function App() {
         items={items}
         onDeleteItem={deleteItem}
         onToggleItem={toggleItem}
+        onClearList={clearList}
       />
       <Stats items={items} />
     </div>
@@ -89,7 +97,7 @@ function Form({ onAddItem: addItem }) {
   );
 }
 
-function PackingList({ items, onDeleteItem, onToggleItem }) {
+function PackingList({ items, onDeleteItem, onToggleItem, onClearList }) {
   const [sortBy, setSortBy] = React.useState("input");
 
   let sortedItems;
@@ -123,6 +131,7 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
+        <button onClick={onClearList}>Clear List</button>
       </div>
     </div>
   );

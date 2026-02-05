@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Steps.css";
 
 const messages = [
   "Hello React!",

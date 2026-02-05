@@ -3,6 +3,7 @@ import Form from './Form';
 import Logo from './Logo';
 import PackingList from './PackingList';
 import Stats from './Stats';
+import './Travel.css';
 
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: false },

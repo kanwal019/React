@@ -1,4 +1,5 @@
 import Accordion from './Accordion';
+import './Accordion.css';
 
 const faqs = [
     {

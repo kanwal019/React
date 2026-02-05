@@ -46,7 +46,7 @@ function Item({ faq, index }) {
       key={index}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <p className="number">{index + 1}</p>
+      <p className="number">{index < 9 ? `0${index + 1}` : index + 1}</p>
       <p className="title">{faq.title}</p>
       <p className="icon">{isOpen ? "-" : "+"}</p>
       {isOpen && <div className="content-box">{faq.text}</div>}

@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# React & Next.js Learning Repository
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ This repository is a personal learning workspace for React and Next.js. Use it to store example projects, notes, experiments, and small demos while you learn both frameworks.
 
-## Available Scripts
+ ## Goals
 
-In the project directory, you can run:
+- Provide a single place to keep practice projects for React and Next.js.
+- Maintain clear setup instructions and recommended commands.
+- Collect useful learning resources and tips.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (recommended v18+)
+- npm, yarn, or pnpm
+- A code editor (VS Code recommended)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Repository Structure
 
-### `npm test`
+The repository is organized as follows:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `react/` — contains a starter React app (Vite)
+- `next/` — contains a starter Next.js app
+- `notes/` — markdown notes and snippets
+- `assets/` — images, design files, etc.
+- `package.json` — root package configuration
 
-### `npm run build`
+## Quick Start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Starter projects are already scaffolded in `react/` and `next/`. To get started:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### React app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```pwsh
+cd react
+npm install
+npm run dev
+```
 
-### `npm run eject`
+### Next.js app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```pwsh
+cd next
+npm install
+npm run dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Notes:
+- Replace `npm` with `yarn` or `pnpm` if you prefer.
+- Each project manages its own dependencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Useful Scripts (per-project)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `npm run dev` — Start the dev server
+- `npm run build` — Build for production
+- `npm run start` — Start the production server (for Next.js)
 
-## Learn More
+## Learning Resources
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React docs: https://reactjs.org/
+- Next.js docs: https://nextjs.org/docs
+- Vite: https://vitejs.dev/
+- Official Next.js examples: https://github.com/vercel/next.js/tree/canary/examples
+- Awesome React (curated resources): https://github.com/enaqx/awesome-react
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing to This Learning Repo
 
-### Code Splitting
+- This repo is primarily for your personal learning. You can still use branches to try things and keep experiments isolated.
+- Keep commits small and descriptive so you can track what you learned.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+This repository is licensed under the MIT License — see the `LICENSE` file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you want, I can add CI configuration or other tools to this setup. Which would you like next?

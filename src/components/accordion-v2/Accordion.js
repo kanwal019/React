@@ -10,10 +10,12 @@ export default function Accordion({ faqs }) {
                     <Item
                         currOpen={currentOpenIndex}
                         onOpen={setCurrentOpenIndex}
-                        faq={faq}
+                        title={faq.title}
                         index={i}
-                        key={i}
-                    />
+                        key={faq.title}
+                    >
+                        {faq.text}
+                    </Item>
                 ))
             }
         </div>

@@ -18,6 +18,15 @@ export default function Accordion({ faqs }) {
                     </Item>
                 ))
             }
+            <Item
+                currOpen={currentOpenIndex}
+                onOpen={setCurrentOpenIndex}
+                title={"How many people can I invite to the party?"}
+                index={faqs.length}
+                key={"last"}
+            >
+                You can invite up to 2 people to the party.
+            </Item>
         </div>
     );
 }

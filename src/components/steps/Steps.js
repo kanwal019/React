@@ -41,12 +41,14 @@ export function Steps() {
                             backgroundColor="#7950f2"
                             onClick={handlePrevious}
                             text="Previous"
+                            emoji='👈'
                         />
                         <Button
                             textColor="#fff"
                             backgroundColor="#7950f2"
                             onClick={handleNext}
                             text="Next"
+                            emoji='👉'
                         />
                     </div>
                 </div>

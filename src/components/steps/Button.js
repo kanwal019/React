@@ -1,11 +1,11 @@
-export function Button({ textColor, backgroundColor, onClick, text }) {
+export function Button({ textColor, backgroundColor, onClick, text, emoji }) {
     return (
         <button
             style={{ backgroundColor: backgroundColor, color: textColor }}
             onClick={onClick}
             onMouseEnter={() => console.debug(`Enter ${text} button`)}
         >
-            {text}
+            {emoji && <span>{emoji}</span>} {text}
         </button>
     );
 }

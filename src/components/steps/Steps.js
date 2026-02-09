@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { messages } from "./App";
+import { Button } from "./Button";
 
 export function Steps() {
     const [step, setStep] = useState(1);
@@ -35,23 +36,22 @@ export function Steps() {
                         Step {step}: {messages[step - 1]} {/*{test.name}*/}
                     </p>
                     <div className="buttons">
-                        <button
-                            style={{ backgroundColor: "#7950f2", color: "#fff" }}
+                        <Button
+                            textColor="#fff"
+                            backgroundColor="#7950f2"
                             onClick={handlePrevious}
-                            onMouseEnter={() => console.debug("Enter Previous button")}
-                        >
-                            Previous
-                        </button>
-                        <button
-                            style={{ backgroundColor: "#7950f2", color: "#fff" }}
+                            text="Previous"
+                        />
+                        <Button
+                            textColor="#fff"
+                            backgroundColor="#7950f2"
                             onClick={handleNext}
-                            onMouseEnter={() => console.debug("Enter Next button")}
-                        >
-                            Next
-                        </button>
+                            text="Next"
+                        />
                     </div>
                 </div>
             )}
         </div>
     );
 }
+

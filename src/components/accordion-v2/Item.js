@@ -5,7 +5,7 @@ export default function Item({ currOpen, onOpen, title, index, children }) {
         <div
             className={`item ${isOpen ? "open" : ""}`}
             key={index}
-            onClick={() => onOpen(index)}
+            onClick={() => onOpen(isOpen ? null : index)}
         >
             <p className="number">{index < 9 ? `0${index + 1}` : index + 1}</p>
             <p className="title">{title}</p>

@@ -1,5 +1,5 @@
-export default function Output() {
+export default function Output({ bill, tip }) {
     return (
-        <h3>You pay X ($A + $B tip)</h3>
+        <h3>You pay ${bill + tip} (${bill} + ${tip} tip)</h3>
     );
 }

@@ -1,8 +1,15 @@
-export default function Selector({ children }) {
+export default function Selector({ percentage, onSetPercentage, children }) {
     return (
         <div>
             <label htmlFor="tip">{children}</label>
-            <select id="tip">
+            <select
+                id="tip"
+                value={percentage}
+                onChange=
+                {
+                    (e) => onSetPercentage(Number(e.target.value))
+                }
+            >
                 <option value="0">Dissatisfied (0%)</option>
                 <option value="5">It was okay (5%)</option>
                 <option value="10">It was good (10%)</option>

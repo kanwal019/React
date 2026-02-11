@@ -29,11 +29,15 @@ export default function TipCalculator() {
             <Selector
                 percentage={friendPercentage}
                 onSetPercentage={setFriendPercentage}>How did your friend like the service?</Selector>
-            <Output
-                bill={bill}
-                tip={tip}
-            />
-            <Reset onReset={handleReset} />
+            {bill > 0 &&
+                <>
+                    <Output
+                        bill={bill}
+                        tip={tip}
+                    />
+                    <Reset onReset={handleReset} />
+                </>
+            }
         </div>
     );
 }

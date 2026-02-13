@@ -1,5 +1,5 @@
 import './EatAndSplit.css';
-import { FriendList } from './FriendList';
+import FriendList from './FriendList';
 
 export const initialFriends = [
     {

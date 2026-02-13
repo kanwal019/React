@@ -15,7 +15,7 @@ export default function FormSplitBill() {
                 <option value="you">You</option>
                 <option value="friend">Clarke</option>
             </select>
-            <Button onClick={() => console.log("Splitting the bill")}>Split Bill</Button>
+            <Button onClick={() => console.log("Splitting the bill")}>⛓️‍💥 Split Bill</Button>
         </form>
     );
 }

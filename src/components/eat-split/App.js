@@ -3,6 +3,7 @@ import './EatAndSplit.css';
 import FormAddFriend from './FormAddFriend';
 import FormSplitBill from './FormSplitBill';
 import FriendList from './FriendList';
+import { useState } from 'react';
 
 export const initialFriends = [
     {
@@ -27,12 +28,18 @@ export const initialFriends = [
 
 
 export default function App() {
+    const [showAddFriend, setShowAddFriend] = useState(false);
+
+    function handleShowAddFriend() {
+        setShowAddFriend((show) => !show);
+    }
+
     return (
         <div className='app'>
             <div className='sidebar'>
                 <FriendList friends={initialFriends} />
-                <FormAddFriend />
-                <Button onClick={() => console.log("Adding new friend")}>Add Friend</Button>
+                {showAddFriend && <FormAddFriend />}
+                <Button onClick={handleShowAddFriend}>{showAddFriend ? "❌ Close" : "➕ Add Friend"}</Button>
             </div>
             <FormSplitBill />
         </div>

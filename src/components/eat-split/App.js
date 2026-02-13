@@ -1,6 +1,7 @@
 import './EatAndSplit.css';
+import { FriendList } from './FriendList';
 
-const initialFriends = [
+export const initialFriends = [
     {
         id: 118836,
         name: "Clark",
@@ -24,9 +25,11 @@ const initialFriends = [
 
 export default function App() {
     return (
-        <div>
-            <h1>Eat Split</h1>
-            <p>Calculate how much each person should pay when splitting a bill.</p>
+        <div className='app'>
+            <div className='sidebar'>
+                <FriendList friends={initialFriends} />
+            </div>
         </div>
     );
 }
+

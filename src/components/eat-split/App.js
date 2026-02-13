@@ -1,4 +1,7 @@
+import Button from './Button';
 import './EatAndSplit.css';
+import FormAddFriend from './FormAddFriend';
+import FormSplitBill from './FormSplitBill';
 import FriendList from './FriendList';
 
 export const initialFriends = [
@@ -28,7 +31,10 @@ export default function App() {
         <div className='app'>
             <div className='sidebar'>
                 <FriendList friends={initialFriends} />
+                <FormAddFriend />
+                <Button onClick={() => console.log("Adding new friend")}>Add Friend</Button>
             </div>
+            <FormSplitBill />
         </div>
     );
 }

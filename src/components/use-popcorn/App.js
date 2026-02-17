@@ -1,7 +1,10 @@
-import './UsePopcorn.css';
 import { NavBar } from "./NavBar";
+import { NumResults } from "./NumResults";
+import { Logo } from "./Logo";
+import { Search } from "./Search";
 import { Main } from "./Main";
 import { useState } from "react";
+import './UsePopcorn.css';
 
 export const tempMovieData = [
     {
@@ -57,7 +60,11 @@ export default function App() {
     const [movies, setMovies] = useState(tempMovieData);
     return (
         <>
-            <NavBar movies={movies} />
+            <NavBar>
+                <Logo />
+                <Search />
+                <NumResults movies={movies} />
+            </NavBar>
             <Main movies={movies} />
         </>
     );

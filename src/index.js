@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./components/eat-split/App.js";
+import App from "./components/use-popcorn/App.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

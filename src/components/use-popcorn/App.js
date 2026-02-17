@@ -3,6 +3,9 @@ import { NumResults } from "./NumResults";
 import { Logo } from "./Logo";
 import { Search } from "./Search";
 import { Main } from "./Main";
+import { ListBox } from "./ListBox";
+import { WatchedBox } from "./WatchedBox";
+import { MovieList } from "./MovieList";
 import { useState } from "react";
 import './UsePopcorn.css';
 
@@ -65,7 +68,12 @@ export default function App() {
                 <Search />
                 <NumResults movies={movies} />
             </NavBar>
-            <Main movies={movies} />
+            <Main>
+                <ListBox>
+                    <MovieList movies={movies} />
+                </ListBox>
+                <WatchedBox />
+            </Main>
         </>
     );
 }

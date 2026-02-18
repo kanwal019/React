@@ -3,8 +3,7 @@ import { NumResults } from "./NumResults";
 import { Logo } from "./Logo";
 import { Search } from "./Search";
 import { Main } from "./Main";
-import { ListBox } from "./ListBox";
-import { WatchedBox } from "./WatchedBox";
+import { Box } from "./Box";
 import { WatchedSummary } from "./WatchedSummary";
 import { WatchedMoviesList } from "./WatchedMoviesList";
 import { MovieList } from "./MovieList";
@@ -72,13 +71,13 @@ export default function App() {
                 <NumResults movies={movies} />
             </NavBar>
             <Main>
-                <ListBox>
+                <Box>
                     <MovieList movies={movies} />
-                </ListBox>
-                <WatchedBox>
+                </Box>
+                <Box>
                     <WatchedSummary watched={watched} />
                     <WatchedMoviesList watched={watched} />
-                </WatchedBox>
+                </Box>
             </Main>
         </>
     );

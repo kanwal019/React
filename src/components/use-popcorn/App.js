@@ -5,8 +5,7 @@ import { Search } from "./Search";
 import { Main } from "./Main";
 import { Box } from "./Box";
 import { WatchedSummary } from "./WatchedSummary";
-import { WatchedMoviesList } from "./WatchedMoviesList";
-import { MovieList } from "./MovieList";
+import { List } from "./List";
 import { useState } from "react";
 import './UsePopcorn.css';
 
@@ -72,11 +71,11 @@ export default function App() {
             </NavBar>
             <Main>
                 <Box>
-                    <MovieList movies={movies} />
+                    <List movies={movies} />
                 </Box>
                 <Box>
                     <WatchedSummary watched={watched} />
-                    <WatchedMoviesList watched={watched} />
+                    <List watched={watched} />
                 </Box>
             </Main>
         </>

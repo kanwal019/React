@@ -1,10 +1,6 @@
 import { useState } from "react";
-import { tempWatchedData } from "./App";
-import { WatchedSummary } from "./WatchedSummary";
-import { WatchedMoviesList } from "./WatchedMoviesList";
 
-export function WatchedBox() {
-    const [watched, setWatched] = useState(tempWatchedData);
+export function WatchedBox({ children }) {
     const [isOpen2, setIsOpen2] = useState(true);
 
     return (
@@ -15,12 +11,7 @@ export function WatchedBox() {
             >
                 {isOpen2 ? "–" : "+"}
             </button>
-            {isOpen2 && (
-                <>
-                    <WatchedSummary watched={watched} />
-                    <WatchedMoviesList watched={watched} />
-                </>
-            )}
+            {isOpen2 && children}
         </div>
     );
 }

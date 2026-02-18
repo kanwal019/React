@@ -5,6 +5,8 @@ import { Search } from "./Search";
 import { Main } from "./Main";
 import { ListBox } from "./ListBox";
 import { WatchedBox } from "./WatchedBox";
+import { WatchedSummary } from "./WatchedSummary";
+import { WatchedMoviesList } from "./WatchedMoviesList";
 import { MovieList } from "./MovieList";
 import { useState } from "react";
 import './UsePopcorn.css';
@@ -61,6 +63,7 @@ export const average = (arr) =>
 
 export default function App() {
     const [movies, setMovies] = useState(tempMovieData);
+    const [watched, setWatched] = useState(tempWatchedData);
     return (
         <>
             <NavBar>
@@ -72,7 +75,10 @@ export default function App() {
                 <ListBox>
                     <MovieList movies={movies} />
                 </ListBox>
-                <WatchedBox />
+                <WatchedBox>
+                    <WatchedSummary watched={watched} />
+                    <WatchedMoviesList watched={watched} />
+                </WatchedBox>
             </Main>
         </>
     );

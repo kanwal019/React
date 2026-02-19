@@ -74,7 +74,7 @@ export default function App() {
                 <Box element={
                     <>
                         <WatchedSummary watched={watched} />
-                        <List watched={watched} />
+                        <List movies={watched} />
                     </>
                 } />
             </Main>
